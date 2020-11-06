@@ -1,0 +1,32 @@
+
+<main>
+    <div class="jumbotron mt-5">
+        <div class="container">
+          <h1 class="display-3 mb-5">¡Bienvenido a Posting!</h1>
+          <p class="mb-5">En este espacio podrás publicar y leer artículos de todo tipo. Sólo tienes que registrarte y empezar a escribir.</p>
+
+          <p><a class="btn btn-primary btn-lg">Empieza ya »</a></p>
+        </div>        
+
+    </div>
+
+    <div class="container mt-5">
+
+        <div class="blog-post mb-5" *ngFor="let post of posts; let i = index">
+            <h2 class="blog-post-title">First blog post {{ post[i].title }}</h2>
+            <p class="blog-post-meta">Autor Jacob {{ post[i].name }} </p>
+            <img [src]="post[i].image">
+    
+            <div> {{ post[i].text }} </div>
+            <p *ngIf="post[i].tags !== ''">Tags: {{ post[i].tags }} </p>
+        </div>
+        
+        <hr>
+    </div>
+
+    
+</main>
+
+
+  
+  

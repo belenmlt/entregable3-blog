@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    color: #23275c !important;
+    background-color: #edebd9;
+
+}
+
+.blog-icon {
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1.5vw;
+}
+
+
+.bg-light {   
+    background-color: #fccf17 !important
+}
+
+.navbar-brand {
+    color: #23275c !important
+}
+
+.navbar-light .navbar-toggler {
+    color: #23275c;
+    border-color: rgb(35,39,92);
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover{
+    color: #23275c;
+    outline: 5px auto #23275c;
+    ;
+}

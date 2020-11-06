@@ -1,0 +1,34 @@
+
+.jumbotron {
+    background-color: white;
+}
+
+.btn-primary {
+    color: #fff ;
+    background-color: #23275c;
+    border-color: #23275c;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle {
+    color: #fff ;
+    background-color: #00848c;
+    border-color:  #00848c;
+    box-shadow: 0 0 0 0.2rem rgba(0,132,140,.5);
+
+}
+
+/* .btn-secondary {
+    color: #edebd9 ;
+    background-color: #00848c;
+    border-color:  #00848c;
+    
+} */
+
+/* .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle {
+    color: #23275c ;
+    background-color: #fccf17;
+    border-color: #fccf17;
+    box-shadow: 0 0 0 0.2rem rgba(252,207,23,.5);
+
+} */
+    
