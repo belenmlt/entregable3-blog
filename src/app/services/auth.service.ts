@@ -9,10 +9,8 @@ export class AuthService {
   constructor() { }
 
   loginForm(user: UserModel): boolean {
-
-    console.log("Datos introducidos", user);
     
-    if (user.email === "prueba@prueba.com" && user.password === "1234") {
+    if (user.email === "aloha@posting.com" && user.password === "posting") {
       localStorage.setItem("auth", "true");
       return true;
 

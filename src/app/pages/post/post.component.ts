@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FormDataTransferService } from 'src/app/services/form-data-transfer.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class PostComponent implements OnInit {
   allPosts: Object[] = [];
 
   constructor(private postFb: FormBuilder,
-              private formDataTransferService: FormDataTransferService) { 
+              private formDataTransferService: FormDataTransferService,
+              private router: Router) { 
     this.createPostForm();
   }
 
@@ -45,15 +46,13 @@ export class PostComponent implements OnInit {
       name: ["", [Validators.required, Validators.minLength(3)]],
       title: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(70)]],
       image: ["", Validators.required],
-      text: ["",[Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
+      text: ["",[Validators.required, Validators.minLength(50), Validators.maxLength(1000)]],
       tags: this.postFb.array([])
     });
   }
 
   // Event onclick submit
   savePostForm(): void {
-    console.log("Post Form desde Post Component", this.postForm);
-
     if (this.postForm.status === "INVALID") {
       alert("Por favor, rellena los campos requeridos para hacer la publicación.");
     } else {
@@ -61,6 +60,7 @@ export class PostComponent implements OnInit {
       console.log("Todo bien");
       this.transfer();
       this.postForm.reset();
+      this.router.navigateByUrl("/home")
 
       // console.log("ALL POSTS desde POST Comp", this.addPosts()); 
       
@@ -79,13 +79,5 @@ export class PostComponent implements OnInit {
   transfer(){
     this.formDataTransferService.addElement(this.postForm)
   }
-  
-  // addPosts() {
-  //   this.allPosts.push(this.postForm.value);
-  //   this.formDataTransferService.getAllPosts(this.allPosts);
-
-  //   return this.allPosts;
-  // }
-  
 
 }

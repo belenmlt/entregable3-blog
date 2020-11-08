@@ -10,15 +10,12 @@ import { PostComponent } from './pages/post/post.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthService } from './services/auth.service';
-import { FormDataTransferService } from './services/form-data-transfer.service';
-
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    PostComponent
+    PostComponent  
   ],
   imports: [
     BrowserModule,
